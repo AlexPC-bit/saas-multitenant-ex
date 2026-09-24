@@ -17,7 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
     $middleware->alias([
         'resolve.tenant' => ResolveTenant::class,
     ]);
-    $middleware->throttleApi();
+    $middleware->throttleApi(); // 60 req/min por padrão
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
